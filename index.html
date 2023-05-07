@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Load third-party modules here. -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <!-- Load local Javascript files here. -->
+    <script src="./src/option.js"></script>
+    <script src="./src/2d.js"></script>
+    <script src="./src/entity.js"></script>
+    <script src="./src/kaiserBessel.js"></script>
+    <script src="./src/update.js"></script>
+    <script src="./src/draw.js"></script>
+    <script src="./src/world.js"></script>
+    <script src="./src/tab.js"></script>
+    <script src="./src/main.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="sidebar">
+        <header>
+          <h1>PD Control</h1>
+          <address id="author">Josh Chuang</address>
+        </header>
+        <div id="tabs">
+          <h2 class="tab" id="tabIntroduction">I. Introduction</h2>
+          <h2 class="tab tab--inactive" id="tabOption">II. Option</h2>
+        </div>
+        <div id="panels">
+          <div class="panel" id="panelIntroduction">
+            <br />
+            <p>
+              <i>PID control</i> is a feedback control law based on the error value, the difference between
+              a reference and a system output. The control input is the weighted sum of the terms:
+            </p>
+            <ul>
+              <li><i>P (proportional)</i>: proportional to the error</li>
+              <li><i>I (integral)</i>: grows with time when an error persists</li>
+              <li><i>D (derivative)</i>: proportional to the change in the error</li>
+            </ul>
+            <p><i>PD control</i> uses only terms P and D.</p>
+            <p>
+              <i>Saturation</i> occurs when the physical limit of the plant is reached. Control
+              performance suffers when saturation occurs.
+            </p>
+            <p>
+              A step reference raises the error value suddenly and triggers saturation, which can be
+              mitigated when the high-frequency components are filtered out. In general, path
+              planning techniques generates a feasible reference path given the physical limit of
+              the plant.
+            </p>
+            <p>
+              The source code is available on
+              <a
+                href="https://github.com/joshvictor1024/pd-control"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                >Github</a
+              >.
+            </p>
+          </div>
+          <div class="panel" id="panelOption" style="display: none"></div>
+        </div>
+      </div>
+      <svg id="world"></svg>
+    </div>
+  </body>
+</html>
