@@ -31,8 +31,9 @@
           <div class="panel" id="panelIntroduction">
             <br />
             <p>
-              <i>PID control</i> is a feedback control law based on the error value, the difference between
-              a reference and a system output. The control input is the weighted sum of the terms:
+              <i>PID control</i> is a feedback control law based on the error value, the difference
+              between a reference and a system output. The control input is the weighted sum of the
+              terms:
             </p>
             <ul>
               <li><i>P (proportional)</i>: proportional to the error</li>
@@ -45,10 +46,9 @@
               performance suffers when saturation occurs.
             </p>
             <p>
-              A step reference raises the error value suddenly and triggers saturation, which can be
-              mitigated when the high-frequency components are filtered out. In general, path
-              planning techniques generates a feasible reference path given the physical limit of
-              the plant.
+              When the reference contains sudden changes, putting it through a lowpass filter can
+              help prevent saturation. In general, path tracking techniques generate control signals
+              that factors in the physical limits of the plant.
             </p>
             <p>
               The source code is available on

@@ -18,7 +18,7 @@ An interactive demo of tracking using PD control.
 
 *Saturation* occurs when the physical limit of the plant is reached. Control performance suffers when saturation occurs.
 
-A step reference raises the error value suddenly and triggers saturation, which can be mitigated when the high-frequency components are filtered out. In general, path planning techniques generates a feasible reference path given the physical limit of the plant.
+When the reference contains sudden changes, putting it through a lowpass filter can help prevent saturation. In general, path tracking techniques generate control signals that factors in the physical limits of the plant.
 
 ## Implementation
 
